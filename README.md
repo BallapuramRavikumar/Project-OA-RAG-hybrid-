@@ -9,7 +9,7 @@ Existing Solutions: Existing RAG models face limitations in retrieval, computati
 Hybrid: We introduce Ontology-Augmented RAG (OA-RAG) to improve RAG models by integrating domain ontologies and research data for more accurate, explainable, and domain-specific outputs.
 Impact: OA-RAG enables efficient retrieval and researchers to generate ideas, answer questions, and conduct a literature review
 
-**Implimentaiom:**
+**Implimentation:**
 
 OA-RAG Implementation: The hybrid system, called OA-RAG (Ontology-Augmented RAG), processes user questions through NLP, converts the ontology into a Neo4j knowledge graph, based on the semiconductor  concepts searches the graph and relevant research papers using the arXiv API, and combines the information to generate comprehensive ideas and answers using a powerful language model GPT 3.5 turbo which promted for idea genaration.
 
@@ -119,7 +119,11 @@ This method will load the appropriate prompt from the saved directory.
 from ragas.utils import RAGAS_CACHE_HOME
 Prompt._load(name="groundtruth_idea_generation",language="english",cache_dir=RAGAS_CACHE_HOME)
 
-Prompt(name='Ground truth idea _generation', instruction='Generate a ideas for the given question', examples=[{'answer': "Question": "What is the latest chip that NVIDIA has released.",   "context": "Idea 1: Quantum Dot Transistors
+Prompt(name='Ground truth idea _generation', instruction='Generate a ideas for the given question', examples=[{'answer': "Question": "What is the latest chip that NVIDIA has released.",
+
+"context": 
+"Idea 1: Quantum Dot Transistors
 Quantum dot transistors use nanoscale semiconductor particles to improve speed, power efficiency, and miniaturization in electronics.
-Idea 2: Two-Dimensional Materials for Transistors,Graphene and other 2D materials offer high performance for transistors due to their exceptional electrical properties.Idea 3: Organic Transistors for Flexible Electronics.Organic transistors, made from flexible materials, enable bendable and stretchable electronics for wearables and more.",   "output": {"Ground truth ideas":generatedd "},
+Idea 2: Two-Dimensional Materials for Transistors,Graphene and other 2D materials offer high performance for transistors due to their exceptional electrical properties.
+Idea 3: Organic Transistors for Flexible Electronics.Organic transistors, made from flexible materials, enable bendable and stretchable electronics for wearables and more.",   "output": {"Ground truth ideas":generatedd "},
  input_keys=['question', 'context'], output_key='output', output_type='JSON')
