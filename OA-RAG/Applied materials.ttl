@@ -1,0 +1,219 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ex: <http://example.org/semiconductormaterials/>.
+
+# Top-level classes
+ex:SemiconductorMaterial
+  a owl:Class;
+  rdfs:label "Semiconductor Material"@en;
+  rdfs:comment "A material used in the fabrication of semiconductor devices."@en.
+
+ex:ElementalSemiconductor
+  a owl:Class;
+  rdfs:label "Elemental Semiconductor"@en;
+  rdfs:comment "A semiconductor material composed of a single element."@en;
+  rdfs:subClassOf ex:SemiconductorMaterial.
+
+ex:CompoundSemiconductor
+  a owl:Class;
+  rdfs:label "Compound Semiconductor"@en;
+  rdfs:comment "A semiconductor material composed of two or more elements."@en;
+  rdfs:subClassOf ex:SemiconductorMaterial.
+
+ex:DopingMaterial
+  a owl:Class;
+  rdfs:label "Doping Material"@en;
+  rdfs:comment "A material used to intentionally modify the conductivity of a semiconductor."@en.
+
+ex:Insulator
+  a owl:Class;
+  rdfs:label "Insulator"@en;
+  rdfs:comment "A material that resists the flow of electricity."@en.
+
+ex:DielectricMaterial
+  a owl:Class;
+  rdfs:label "Dielectric Material"@en;
+  rdfs:comment "An insulator used in capacitors and other electronic devices."@en;
+  rdfs:subClassOf ex:Insulator.
+
+ex:Etchant
+  a owl:Class;
+  rdfs:label "Etchant"@en;
+  rdfs:comment "A chemical solution used to remove material from a substrate."@en.
+
+ex:DepositionMaterial
+  a owl:Class;
+  rdfs:label "Deposition Material"@en;
+  rdfs:comment "A material used to deposit thin films onto substrates."@en.
+
+ex:Photoresist
+  a owl:Class;
+  rdfs:label "Photoresist"@en;
+  rdfs:comment "A light-sensitive material used in photolithography to define patterns on a substrate."@en.
+
+ex:PackagingMaterial
+  a owl:Class;
+  rdfs:label "Packaging Material"@en;
+  rdfs:comment "A material used to protect and encapsulate semiconductor devices."@en.
+
+# Specific Materials
+ex:Silicon
+  a ex:ElementalSemiconductor;
+  rdfs:label "Silicon"@en;
+  ex:bandGap 1.12;
+  ex:resistivity 2.3e-3.
+
+ex:Germanium
+  a ex:ElementalSemiconductor;
+  rdfs:label "Germanium"@en;
+  ex:bandGap 0.67;
+  ex:resistivity 4.6e-4.
+
+ex:GalliumArsenide
+  a ex:CompoundSemiconductor;
+  rdfs:label "Gallium Arsenide"@en;
+  ex:bandGap 1.42;
+  ex:resistivity 2.8e-3.
+
+ex:IndiumPhosphide
+  a ex:CompoundSemiconductor;
+  rdfs:label "Indium Phosphide"@en;
+  ex:bandGap 1.35;
+  ex:resistivity 1.5e-3.
+
+ex:SiliconCarbide
+  a ex:CompoundSemiconductor;
+  rdfs:label "Silicon Carbide"@en;
+  ex:bandGap 2.36;
+  ex:resistivity 1e-2.
+
+ex:Phosphorus
+  a ex:DopingMaterial;
+  rdfs:label "Phosphorus"@en;
+  rdfs:comment "Used for n-type doping of silicon."@en.
+
+ex:Boron
+  a ex:DopingMaterial;
+  rdfs:label "Boron"@en;
+  rdfs:comment "Used for p-type doping of silicon."@en.
+
+ex:SiliconDioxide
+  a ex:DielectricMaterial;
+  rdfs:label "Silicon Dioxide"@en;
+  rdfs:comment "A common dielectric material used in MOSFETs."@en.
+
+ex:Teflon
+  a ex:Insulator;
+  rdfs:label "Teflon"@en;
+  rdfs:comment "A high-performance insulator used in various applications."@en.
+
+ex:HydrofluoricAcid
+  a ex:Etchant;
+  rdfs:label "Hydrofluoric Acid"@en;
+  rdfs:comment "Used to etch silicon."@en.
+
+ex:Tungsten
+  a ex:DepositionMaterial;
+  rdfs:label "Tungsten"@en;
+  rdfs:comment "Used as a conductive material in semiconductor devices."@en.
+
+ex:Polysilicon
+  a ex:DepositionMaterial;
+  rdfs:label "Polysilicon"@en;
+  rdfs:comment "Used as a gate material in MOSFETs."@en.
+
+ex:Photoresist
+  a ex:Photoresist;
+  rdfs:label "Photoresist"@en;
+  rdfs:comment "A light-sensitive material used in photolithography."@en.
+
+ex:EpoxyResin
+  a ex:PackagingMaterial;
+  rdfs:label "Epoxy Resin"@en;
+  rdfs:comment "A common packaging material for semiconductor devices."@en.
+
+# Properties
+ex:bandGap
+  a owl:DatatypeProperty;
+  rdfs:label "Band Gap"@en;
+  rdfs:comment "The energy difference between the valence band and the conduction band."@en;
+  rdfs:range xsd:float.
+
+ex:resistivity
+  a owl:DatatypeProperty;
+  rdfs:label "Resistivity"@en;
+  rdfs:comment "The resistance of the material to electrical current flow."@en;
+  rdfs:range xsd:float.
+
+ex:isUsedFor
+  a owl:ObjectProperty;
+  rdfs:label "is used for"@en;
+  rdfs:domain ex:SemiconductorMaterial;
+  rdfs:range ex:SemiconductorProcess.
+
+ex:isUsedIn
+  a owl:ObjectProperty;
+  rdfs:label "is used in"@en;
+  rdfs:domain ex:SemiconductorMaterial;
+  rdfs:range ex:SemiconductorDevice.
+
+ex:isUsedForDoping
+  a owl:ObjectProperty;
+  rdfs:label "is used for doping"@en;
+  rdfs:domain ex:DopingMaterial;
+  rdfs:range ex:SemiconductorMaterial.
+
+ex:isUsedForEtching
+  a owl:ObjectProperty;
+  rdfs:label "is used for etching"@en;
+  rdfs:domain ex:Etchant;
+  rdfs:range ex:SemiconductorMaterial.
+
+ex:isUsedForDeposition
+  a owl:ObjectProperty;
+  rdfs:label "is used for deposition"@en;
+  rdfs:domain ex:DepositionMaterial;
+  rdfs:range ex:SemiconductorMaterial.
+
+ex:isUsedForPackaging
+  a owl:ObjectProperty;
+  rdfs:label "is used for packaging"@en;
+  rdfs:domain ex:PackagingMaterial;
+  rdfs:range ex:SemiconductorDevice.
+
+# Additional Classes (for more detailed ontology)
+ex:SemiconductorProcess
+  a owl:Class;
+  rdfs:label "Semiconductor Process"@en;
+  rdfs:comment "A process used in the fabrication of semiconductor devices."@en.
+
+ex:SemiconductorDevice
+  a owl:Class;
+  rdfs:label "Semiconductor Device"@en;
+  rdfs:comment "A device made from semiconductor materials."@en.
+
+ex:DopingProcess
+  a owl:Class;
+  rdfs:label "Doping Process"@en;
+  rdfs:comment "The process of intentionally introducing impurities into a semiconductor to modify its conductivity."@en;
+  rdfs:subClassOf ex:SemiconductorProcess.
+
+ex:EtchingProcess
+  a owl:Class;
+  rdfs:label "Etching Process"@en;
+  rdfs:comment "The process of removing material from a substrate."@en;
+  rdfs:subClassOf ex:SemiconductorProcess.
+
+ex:DepositionProcess
+  a owl:Class;
+  rdfs:label "Deposition Process"@en;
+  rdfs:comment "The process of depositing thin films onto substrates."@en;
+  rdfs:subClassOf ex:SemiconductorProcess.
+
+ex:PackagingProcess
+  a owl:Class;
+  rdfs:label "Packaging Process"@en;
+  rdfs:comment "The process of protecting and encapsulating semiconductor devices."@en;
+  rdfs:subClassOf ex:SemiconductorProcess.
