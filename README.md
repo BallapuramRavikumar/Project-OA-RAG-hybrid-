@@ -26,6 +26,15 @@ Stop words removal, Stemming Lemmatization, Parts of speech tagging, Named entit
 
 Ontology Development: Crafted a knowledge base for semiconductor research using specialized ontologies and concepts linked to research papers from arXiv.
 
+Transistor,
+Applied materials,
+crystallography, 
+Semiconductor chip,
+Elementary multi-perspective material
+Ontology (EMMO), 
+AI chipdevelopment, 
+Memory technology.
+
 
 **Step-3 Data retrieval**
 
