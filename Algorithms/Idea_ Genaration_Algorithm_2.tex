@@ -1,22 +1,19 @@
 Algorithm 1 Domain-Specific Research Idea Generation
 
-1: procedure GenerateResearchIdeas(query, knowledgeGraph, research￾Papers, LLM, numIdeas)
-2: concepts ← ExtractKeyConcepts(query)
-3: relevantNodes ← FindRelevantNodes(knowledgeGraph, concepts)
-4: relatedPapers ← GetRelatedPapers(researchPapers, relevantNodes)
-5: ideas ← EmptyList()
-6: while Size(ideas) ¡ numIdeas do
-7: prompt ← CreatePrompt(concepts, relatedPapers)
-8: newIdea ← GenerateIdeaWithLLM(LLM, prompt)
-9: if IsNovel(newIdea) AND IsFeasible(newIdea) AND IsRele￾vant(newIdea) then
-10: ideas.Add(newIdea)
-11: end if
-12: end while
-13: return ideas
-14: end procedure
+ procedure GenerateResearchIdeas(query, knowledgeGraph, research￾Papers, LLM, numIdeas)
+ concepts ← ExtractKeyConcepts(query)
+ relevantNodes ← FindRelevantNodes(knowledgeGraph, concepts)
+ relatedPapers ← GetRelatedPapers(researchPapers, relevantNodes)
+ ideas ← EmptyList()
+ while Size(ideas) ¡ numIdeas do
+ prompt ← CreatePrompt(concepts, relatedPapers)
+ newIdea ← GenerateIdeaWithLLM(LLM, prompt)
+ ideas.Add(newIdea)
+ end if
+ end while
+ end procedure
 
-
-1 Process Description
+ Process Description
 This algorithm outlines a method for generating domain-specific research ideas.
 It takes a user query, a knowledge graph of the domain, a set of research papers,
 a large language model (LLM), and the desired number of ideas as inputs.
