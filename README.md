@@ -63,7 +63,8 @@ Dataset Creation: Built a collection of 150 semiconductor-related questions and 
 The UI is the crucial interface that bridges the RAG system to the user. It’s how the user interacts with and receives the results of the RAG process.
 Displaying Information: The UI determines how the generated answer is presented: Text:A simple text box showing the answer. Visualizations:
 
-Matplotlib tool : Graphs, charts to help visualize the answer. 
+**Step-8 Matplotlib tool** 
+Graphs, charts to help visualize the answer. 
 
 
 **GPT 3.5 is prompted with ground truth idea generation**
