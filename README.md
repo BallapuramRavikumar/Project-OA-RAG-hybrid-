@@ -64,6 +64,7 @@ The UI is the crucial interface that bridges the RAG system to the user. It’s 
 Displaying Information: The UI determines how the generated answer is presented: Text:A simple text box showing the answer. Visualizations:
 
 **Step-8 Matplotlib tool** 
+
 Graphs, charts to help visualize the answer. 
 
 
