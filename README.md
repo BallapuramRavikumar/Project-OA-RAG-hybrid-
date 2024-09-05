@@ -4,10 +4,10 @@
 
      Retrieval-augmented generation (RAG) models have demonstrated significant potential in natural language processing tasks for specialized retrieval. However, current retrieval augmented generation models often suffer from inefficient and imprecise retrieval in specified domains, such as the semiconductor industry, leading to sub-optimal performance. This study proposes the incorporation of domain-specific ontology to address these limitations. By leveraging ontological structures and semantic relationships, the proposed approach facilitates the more effective retrieval of relevant information from knowledge bases. In addition, the use of ontology-aware word embeddings, such as owl2vec and open API embeddings, further improves the precision of query-document matching. The proposed ontology-augmented RAG model was evaluated in the semiconductor research domain, demonstrating its potential for enhancing idea generation, providing research assistance, and facilitating innovation in the scientific and technological fields. The results showed improved retrieval accuracy, context awareness, and knowledge integration, ultimately enabling more efficient and precise data retrieval for the RAG model. 
 
-Problem: LLMs struggle with hallucinations and lack of interpretability, hindering their reliability.
-Existing Solutions: Existing RAG models face limitations in retrieval, computational cost, bias, and domain expertise.
-Hybrid: We introduce Ontology-Augmented RAG (OA-RAG) to improve RAG models by integrating domain ontologies and research data for more accurate, explainable, and domain-specific outputs.
-Impact: OA-RAG enables efficient retrieval and researchers to generate ideas, answer questions, and conduct a literature review
+**Problem:** LLMs struggle with hallucinations and lack of interpretability, hindering their reliability.
+**Existing Solutions:** Existing RAG models face limitations in retrieval, computational cost, bias, and domain expertise.
+**Hybrid:** We introduce Ontology-Augmented RAG (OA-RAG) to improve RAG models by integrating domain ontologies and research data for more accurate, explainable, and domain-specific outputs.
+**Impact:** OA-RAG enables efficient retrieval of high quality data and researchers to generate ideas, answer questions, and conduct a literature review
 
 **Implimentation:**
 
@@ -18,11 +18,11 @@ OA-RAG Implementation: The hybrid system, called OA-RAG (Ontology-Augmented RAG)
 **Analysis:** Compared OA-RAG to existing solutions (Naive RAG, Advanced RAG, Gragh RAG), highlighting the benefits of using domain-specific ontologies for semiconductor.
 
 
-**Step-1 User query preprocessing-(NLTK tool)**
+**Step-1 Data preprcessing & User query processing (NLP- NLTK tool)**
 
 Stop words removal, Stemming Lemmatization, Parts of speech tagging, Named entity recognisation, Handleing variation.
 
-**Step-2 Crafting the datasets**
+**Step-2 integrating the Crafting datasets**
 
 Ontology Development: Crafted a knowledge base for semiconductor research using specialized ontologies and concepts linked to research papers from arXiv.
 
